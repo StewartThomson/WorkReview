@@ -1,0 +1,16 @@
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="push" color="accent" [fixedInViewport]="true" [fixedTopGap]="0" [fixedBottomGap]="0">
+        <mat-nav-list>
+            <button mat-button routerLink="/review/5R9tCXuhwWcGSyAOeMSa8g">University of Guelph</button>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+            <h1>Stewart Thomson CO-OP Workplace Reviews</h1>
+        </mat-toolbar>
+        <button mat-raised-button color="accent" (click)="sidenav.toggle()">See reviews</button>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
