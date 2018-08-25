@@ -1,0 +1,68 @@
+agm-map {
+    height: 300px;
+}
+.grid-container {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 1.5fr;
+    grid-gap: 1px 1px;
+    grid-template-areas: "title picture" "text text";
+
+}
+
+.text { grid-area: text; }
+
+.title { 
+    grid-area: title;
+    justify-self: left;
+    align-self: center;
+}
+
+.title > h4 {
+    color: grey;
+}
+
+.title > h1 {
+    font-family: Oswald;
+}
+
+.picture { 
+    grid-area: picture;
+    justify-self: center;
+    align-self: center;
+}
+
+.picture > img {
+    object-fit: fill;
+    width: 100%;
+}
+
+@media all and (-ms-high-contrast: none) {
+    .grid-container {
+        display: -ms-grid;
+        -ms-grid-columns: 1fr 1fr;
+        -ms-grid-rows: 0.5fr 1.5fr;
+    }
+
+    .text {
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+    }
+
+    .title {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
+    }
+
+    .picture {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 1;
+    }
+}

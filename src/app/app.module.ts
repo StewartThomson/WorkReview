@@ -11,6 +11,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
+import {AgmCoreModule} from '@agm/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
@@ -28,7 +29,10 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
-    MatListModule
+    MatListModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAkIXGguCDPkXkiGAkDQa8v_wds7swChmc'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

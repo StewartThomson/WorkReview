@@ -18,10 +18,9 @@ export class ReportComponent implements OnInit {
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.id = params['id'];
+      this.report$ = this.contentful.getContent(this.id);
+      this.contentful.logContent(this.id);
     })
-    this.report$ = this.contentful.getContent(this.id);
-    this.contentful.logContent(this.id);
-    console.log(this.report$);
   }
 
 }

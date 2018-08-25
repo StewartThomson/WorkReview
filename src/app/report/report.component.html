@@ -1,0 +1,28 @@
+<div *ngIf="report$ | async as report">
+  <div class="grid-container">
+    <div class="title">
+      <h1>{{ report.Title }}</h1>
+      <h4>{{ report.term }}</h4>
+    </div>
+    <div class="picture">
+      <img [src]="report.logo.fields.file.url">
+    </div>
+    <div class="text">
+      <h2>Introduction</h2>
+      <div [innerHTML]="report.introduction | mdToHtml"></div>
+      <h2>Employer Information</h2>
+      <div [innerHTML]="report.employerInfo | mdToHtml"></div>
+      <h2>Goals</h2>
+      <div [innerHTML]="report.goals | mdToHtml"></div>
+      <h2>Job Description</h2>
+      <div [innerHTML]="report.jobDescription | mdToHtml"></div>
+      <h2>Conclusions</h2>
+      <div [innerHTML]="report.conclusions | mdToHtml"></div>
+      <h2>Acknowledgements</h2>
+      <div [innerHTML]="report.acknowledgements | mdToHtml"></div>
+      <agm-map [latitude]="report.location.lat" [longitude]="report.location.lon" [zoom]=17 [zoomControl]=false>
+          <agm-marker [latitude]="report.location.lat" [longitude]="report.location.lon"></agm-marker>
+      </agm-map>
+    </div>
+  </div>
+</div>

@@ -22,8 +22,13 @@ export class ContentfulService {
   }
 
   getContent(contentId) {
-    const promise = this.client.getEntry(contentId)
+    const promise = this.client.getEntry(contentId);
     return from(promise).pipe(map(entry => entry.fields));
+  }
+  
+  getAllEntries(){
+    const promise = this.client.getEntries();
+    return from(promise).pipe(map(response => response.items));
   }
 
   markdownToHtml(md: string) {
