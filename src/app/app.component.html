@@ -4,11 +4,11 @@
         <mat-nav-list align="center">
             <div *ngIf="allReports | async as reports">
                 <mat-list-item>
-                    <p routerLink='/'>About me</p>
+                    <p routerLink='/' (click)="sidenav.close()">About me</p>
                 </mat-list-item>
                 <hr>
                 <mat-list-item color="primary" *ngFor="let report of reports">
-                    <p [routerLink]="['/review', report.sys.id]">{{ report.fields.date }} - {{report.fields.Title}}</p>
+                    <p [routerLink]="['/review', report.sys.id]" (click)="sidenav.close()">{{ report.fields.date }} - {{report.fields.Title}}</p>
                 </mat-list-item>
             </div>
         </mat-nav-list>

@@ -30,7 +30,7 @@
     .title { 
         grid-area: title;
         justify-self: center;
-        align-self: center;
+        align-self: start;
     }
     .picture { 
         grid-area: picture;
