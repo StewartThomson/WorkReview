@@ -1,24 +1,28 @@
 
 <mat-sidenav-container>
-    <mat-sidenav #sidenav mode="side" [fixedInViewport]="false" [fixedTopGap]="0" [fixedBottomGap]="0">
-        <mat-nav-list>
+    <mat-sidenav class="center" #sidenav  mode="side" [fixedInViewport]="true" [fixedTopGap]="0" [fixedBottomGap]="0">
+        <mat-nav-list align="center">
             <div *ngIf="allReports | async as reports">
-                <mat-list-item *ngFor="let report of reports">
-                    <p [routerLink]="['/review', report.sys.id]">{{report.fields.Title}}</p>
+                <mat-list-item>
+                    <p routerLink='/'>About me</p>
+                </mat-list-item>
+                <hr>
+                <mat-list-item color="primary" *ngFor="let report of reports">
+                    <p [routerLink]="['/review', report.sys.id]">{{ report.fields.date }} - {{report.fields.Title}}</p>
                 </mat-list-item>
             </div>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-            <div class="grid-container">
+        <div class="grid-container">
             <mat-toolbar  class="header" color="primary">
-                    <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
-                    <h1>Stewart Thomson CO-OP Workplace Reviews</h1>
-                </mat-toolbar>
-                <div class="content">
-                    <router-outlet></router-outlet>
-                </div>
+                <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+                <h1>Stewart Thomson CO-OP Workplace Reviews</h1>
+            </mat-toolbar>
+            <div class="content">
+                <router-outlet></router-outlet>
             </div>
+        </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
 

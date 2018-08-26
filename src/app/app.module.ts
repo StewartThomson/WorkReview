@@ -13,11 +13,13 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {AgmCoreModule} from '@agm/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AboutMeComponent } from './about-me/about-me.component';
 @NgModule({
   declarations: [
     AppComponent,
     ReportComponent,
     MdToHtmlPipe,
+    AboutMeComponent,
   ],
   imports: [
     BrowserModule,

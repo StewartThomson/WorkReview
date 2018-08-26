@@ -1,41 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
 *{
     font-family: Roboto;
 }
+
+body {
+  margin: 0px;
+}
+
 .grid-container {
-    display: grid;
-    height: 100%;
-    grid-template-columns: 0.5fr 2fr 0.5fr;
-    grid-template-rows: 0.2fr 1.8fr;
-    grid-gap: 1px 1px;
-    grid-template-areas: "header header header" ". content .";
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 0.5fr 2fr 0.5fr;
+  grid-template-rows: 0.2fr 1.8fr;
+  grid-gap: 1px 1px;
+  grid-template-areas: "header header header" ". content .";
+}
+
+.header { grid-area: header; }
+
+.content { grid-area: content; }
+
+@media all and (-ms-high-contrast: none) {
+  .grid-container {
+    display: -ms-grid;
+    -ms-grid-columns: 0.5fr 2fr 0.5fr;
+    -ms-grid-rows: 0.2fr 1.8fr;
   }
-  
-  .header { grid-area: header; }
-  
-  .content { grid-area: content; }
-  
-  @media all and (-ms-high-contrast: none) {
-    .grid-container {
-      display: -ms-grid;
-      -ms-grid-columns: 0.5fr 2fr 0.5fr;
-      -ms-grid-rows: 0.2fr 1.8fr;
-    }
-  
-    .header {
-      -ms-grid-row: 1;
-      -ms-grid-row-span: 1;
-      -ms-grid-column: 1;
-      -ms-grid-column-span: 3;
-    }
-  
-    .content {
-      -ms-grid-row: 2;
-      -ms-grid-row-span: 1;
-      -ms-grid-column: 2;
-      -ms-grid-column-span: 1;
-    }
+
+  .header {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
   }
+
+  .content {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+  }
+}

@@ -28,7 +28,9 @@ export class ContentfulService {
   
   getAllEntries(){
     const promise = this.client.getEntries();
-    return from(promise).pipe(map(response => response.items));
+    return from(promise).pipe(map(response => response.items.sort((a: any,b: any) => {
+      return a.fields.date.localeCompare(b.fields.date);
+    })));
   }
 
   markdownToHtml(md: string) {

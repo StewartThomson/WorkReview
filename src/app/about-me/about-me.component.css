@@ -1,18 +1,12 @@
-agm-map {
-    height: 300px;
-}
-
-
 @media (min-width: 1025px){
-    .report-grid {
+    .about-grid {
         display: grid;
         height: 100%;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 0.5fr 1.5fr;
+        grid-template-rows: 1fr;
         grid-gap: 20px 20px;
-        grid-template-areas: "title picture" "text text";
+        grid-template-areas: "title picture";
     }
-    
     .title { 
         grid-area: title;
         justify-self: left;
@@ -25,29 +19,32 @@ agm-map {
     }
 }
 @media (min-width: 320px) and (max-width: 1024px) {
-    .report-grid {
+    .about-grid {
         display: grid;
         height: 100%;
         grid-template-columns: 1fr;
-        grid-template-rows: 0.5fr 0.5fr 2fr;
+        grid-template-rows: 1fr 1fr;
         grid-gap: 20px 20px;
-        grid-template-areas: "picture" "title" "text";
+        grid-template-areas: "picture" "title";
     }
-    
     .title { 
         grid-area: title;
         justify-self: center;
         align-self: center;
-        text-align: center;
     }
     .picture { 
         grid-area: picture;
         justify-self: center;
         align-self: start;
     }
+    
 }
 
-.text { grid-area: text; }
+
+.picture > img {
+    object-fit: fill;
+    width: 100%;
+}
 
 .title > h4 {
     color: grey;
@@ -55,9 +52,4 @@ agm-map {
 
 .title > h1 {
     font-family: Merriweather;
-}
-
-.picture > img {
-    object-fit: fill;
-    width: 100%;
 }
